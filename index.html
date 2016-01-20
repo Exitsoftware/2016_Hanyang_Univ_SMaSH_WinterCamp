@@ -1,0 +1,131 @@
+<!Document html>
+<html>
+    <head>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <!--web font-->
+        <link href='https://fonts.googleapis.com/css?family=Exo:400,100' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/earlyaccess/hanna.css' rel='stylesheet' type="text/css">
+        <!--XEIcon-->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
+
+
+        <title>hello world!!</title>
+        <style>
+            *{
+                margin: 0 auto;
+                font-family: 'Exo';
+            }
+            a{
+                text-decoration: none;
+            }
+            a:hover{
+                color: white;
+                text-decoration: none;
+            }
+            
+            i{
+                font-size: 2em;
+            }
+            .right{
+                float: right;
+            }
+            .left{
+                float: left;
+            }
+            #main_nav{
+                padding: 20px;
+                height: 72px;
+                clear: both;
+/*                background: #444444;*/
+            }
+            #nav_list > li{
+                margin: 10px;
+                font-size: 2em;
+            }
+            #logo{
+                font-size: 2em;
+                color: white;
+            }
+            #logo:hover{
+                transition: 0.3s;
+                font-size: 2.2em;
+            }
+            #footer{
+                margin: 0 auto;
+                text-align: center;
+                background: #444444;
+                height:100px;
+                padding: 20px;
+                color: gray;
+            }
+            .fixed_img{
+                background-attachment: fixed;
+                background-image: url('./img/main_bg.png');
+                background-size: cover;
+                color:white;
+            }
+            .container{
+                text-align: center;
+                padding: 200px;
+            }
+            .circle{
+                border: 3px solid white;
+                color: white;
+                border-radius: 100%;
+                line-height: 72px;
+                font-size: 2em;
+                width: 72px;
+                height: 72px;
+            }
+            .circle:hover{
+                transition: 0.3s;
+                background: white;
+                color: gray;
+                
+            }
+            #facebook{
+                color:white;
+            }
+            #facebook:hover{
+                color:gray;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="fixed_img">
+            <div id="main_nav">
+                <div class="left">
+                    <a href="#" id="logo">About me</a>
+                </div>
+                <div class="right">
+                    <ul id="nav_list">
+                        <li class="right"><a href="#">test</a></li>
+                        <li class="right"><a href="#">test</a></li>
+                        <li class="right"><a href="#">test</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <h1 style="font-size:5em;font-family:hanna">디 발 자</h1>
+                <h1 style="font-weight:100">Developer & Designer</h1>
+                </br>
+                </br>
+                <a href="https://www.facebook.com/yoonhwan.na.1">
+                    <div class="circle">
+                        <storng>f</storng>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+        <div id="footer" >
+            <p>About me. Na Yun Hwan</p>
+        </div>
+    </body>
+</html>
