@@ -25,7 +25,6 @@
                 text-decoration: none;
             }
             a:hover{
-                color: white;
                 text-decoration: none;
             }
             
@@ -37,6 +36,13 @@
             }
             .left{
                 float: left;
+            }
+            .list{
+                list-style: none;
+            }
+            .list > li{
+                margin-top:5px;
+                font-size: 16px;
             }
             #main_nav{
                 padding: 20px;
@@ -78,11 +84,18 @@
                 height:100px;
                 padding: 20px;
                 color: gray;
-/*                opacity: 0.5;*/
             }
+            
+            #main_container{
+                padding: 100px 200px 100px 200px;
+            }
+            #sub_container{
+                padding: 0px 100px 0px 100px;
+            }
+            
             .fixed_img{
                 background-attachment: fixed;
-                background-image: url('./img/main.jpg');
+                background-image: url('./img/profile.jpg');
                 background-size: cover;
                 color:white;
             }
@@ -117,6 +130,9 @@
             .git:hover{
                 color: #5C1DB5;
             }
+            .contents{
+                margin-bottom: 100px;
+            }
         </style>
     </head>
     <body>
@@ -124,7 +140,7 @@
         <div class="fixed_img">
             <div id="main_nav">
                 <div class="left">
-                    <a href="./index.html" id="logo">About me</a>
+                    <a href="/index.html" id="logo">About me</a>
                 </div>
                 <div class="right">
                     <ul id="nav_list">
@@ -135,34 +151,62 @@
                     </ul>
                 </div>
             </div>
+            
             <div class="container">
-                <h1 style="font-size:3.5em">Na Yun Hwan</h1>
-                <h2 style="font-weight:100">Developer & Designer</h2>
-                <br>
-                <br>
-                
-
-                <div id="main_list">
-                    <li class="left">
-                        <a href="https://www.facebook.com/yoonhwan.na.1">
-                            <div class="circle facebook">
-                                <storng style="font-weight:800;font-size:38px;">f</storng>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="left">
-                        <a href="https://github.com/Exitsoftware">
-                            <div class="circle git">
-                                <i class="xi-github" style="padding-top:3px;"></i>
-                            </div>
-                        </a>
-                    </li>
-
+                <div class="left" style="text-align:left;margin-left:-200px;">
+                    <h1 style="font-size:52px;">Na Yun Hwan</h1>
+                    <br>
+                    <div style="margin-left:24px; font-weight:100;font-size:24px;" >
+                        <p>Hanyang University, ERICA</p>
+                        <br>
+                        <p>Dept. Computer Science & Engineering</br>Design Engineering</p>
+                    </div>
                 </div>
                 
             </div>
         </div>
-            
+        </div>
+
+        <div id="main_container">
+            <h1 style="text-align:center;font-size:42px;">Introduce</h1>
+            <br>
+            <br>
+            <hr>
+            </br>
+            <div id="sub_container">
+                <div class="contents">
+                    <h2>Histroy</h2>
+                    </br>
+                    </br>
+                    <ul class="list">
+                        <li>[2012 ~ ] Exit-Software 설립자 대표</li>
+                        <li>[2013] Ahnlab V School 13기</li>
+                        <li>[2013 ~ 2014] Google Developer Group 천안 & 아산 대표</li>
+                        <li>[2013 ~ 2014] Team. IP UI/UX 디자이너 & Core 프로그래머</li>
+                        <li>[2014] 한양대학교 ERICA 컴퓨터공학 입학</li>
+                        <li>[2014] 한양대학교 인재모임 HACS 미디어부 6기</li>
+                        <li>[2014] Samsung Software Challenger 8기</li>
+                        <li><a href="http://www.hanyang.ac.kr/user/indexSub.action?codyMenuSeq=1814&siteId=hanyangkr2&menuType=T&uId=7&sortChar=AAAA&menuFrame=left&linkUrl=08_01_02.html&mainFrame=right&dum=dum&command=weekly_view&weeklyFile=d&weeklyId=2014-09-1-7%20&weeklyViewType=weekly_file&year=2013&page=1">[2014] 9월 둘째주 금주의 한양인 선정</a></li>
+                        <li><a href="http://www.newshyu.com/news/articleView.html?idxno=16268">[2014] 한양을 빛낼 젊은 동문 75인 선정</a></li>
+                        <li>[2015] 한양대학교 디자인공학 다중전공</li>
+                        <li>[2015] Samsung Software Membership 25-2기</li>
+                        <li>[2016] 한양대학교 인재모임 HACS 제 6대 대표</li>
+                    </ul>
+                </div>
+                <div class="contents">
+                    <h2>Awards</h2>
+                    </br>
+                    </br>
+                    <ul class="list">
+                        <li>[2012] 고교 정보올림피아드 천안시 동상 (프로그래밍 부문)</li>
+                        <li>[2013] 고교 정보올림피아드 천안시 금상 (소프트웨어 공모 부문)</li>
+                        <li>[2013] 고교 정보올림피아드 충청남도 동상 (소프트웨어 공모 부문)</li>
+                        <li>[2014] Samsung 갤럭시 기어 해커톤 특별상</li>
+                        <li>[2014] Samsung Software Challenge 우수상</li>
+                        <li>[2014] 한양대학교 소프트웨어 경진대회 최우수상 (아이디어 부문)</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div id="footer" >
             <p>About me. Na Yun Hwan</p>

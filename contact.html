@@ -25,7 +25,6 @@
                 text-decoration: none;
             }
             a:hover{
-                color: white;
                 text-decoration: none;
             }
             
@@ -37,6 +36,13 @@
             }
             .left{
                 float: left;
+            }
+            .list{
+                list-style: none;
+            }
+            .list > li{
+                margin-top:5px;
+                font-size: 16px;
             }
             #main_nav{
                 padding: 20px;
@@ -78,11 +84,18 @@
                 height:100px;
                 padding: 20px;
                 color: gray;
-/*                opacity: 0.5;*/
             }
+            
+            #main_container{
+                padding: 100px 200px 100px 200px;
+            }
+            #sub_container{
+                padding: 0px 100px 0px 100px;
+            }
+            
             .fixed_img{
                 background-attachment: fixed;
-                background-image: url('./img/main.jpg');
+                background-image: url('./img/mail.jpg');
                 background-size: cover;
                 color:white;
             }
@@ -117,6 +130,9 @@
             .git:hover{
                 color: #5C1DB5;
             }
+            .contents{
+                margin-bottom: 100px;
+            }
         </style>
     </head>
     <body>
@@ -124,7 +140,7 @@
         <div class="fixed_img">
             <div id="main_nav">
                 <div class="left">
-                    <a href="./index.html" id="logo">About me</a>
+                    <a href="/index.html" id="logo">About me</a>
                 </div>
                 <div class="right">
                     <ul id="nav_list">
@@ -135,34 +151,22 @@
                     </ul>
                 </div>
             </div>
+            
             <div class="container">
-                <h1 style="font-size:3.5em">Na Yun Hwan</h1>
-                <h2 style="font-weight:100">Developer & Designer</h2>
-                <br>
-                <br>
-                
-
-                <div id="main_list">
-                    <li class="left">
-                        <a href="https://www.facebook.com/yoonhwan.na.1">
-                            <div class="circle facebook">
-                                <storng style="font-weight:800;font-size:38px;">f</storng>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="left">
-                        <a href="https://github.com/Exitsoftware">
-                            <div class="circle git">
-                                <i class="xi-github" style="padding-top:3px;"></i>
-                            </div>
-                        </a>
-                    </li>
-
-                </div>
-                
+                <h1 style="font-size:80px; margin-bottom:100px;">Contact</h1>
             </div>
         </div>
-            
+        </div>
+
+        <div id="main_container">
+            <h1 style="text-align:center;font-size:42px;"><i class="xi-social-email"></i></h1>
+            <br>
+
+            <div id="sub_container">
+                <div class="contents" style="text-align:center">
+                    <h1>kbk9288@gmail.com</h1>
+                </div>
+            </div>
         </div>
         <div id="footer" >
             <p>About me. Na Yun Hwan</p>

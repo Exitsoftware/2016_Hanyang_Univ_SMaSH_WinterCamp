@@ -13,7 +13,7 @@
         <link href='http://fonts.googleapis.com/earlyaccess/hanna.css' rel='stylesheet' type="text/css">
         <!--XEIcon-->
         <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
-
+        
 
         <title>hello world!!</title>
         <style>
@@ -25,7 +25,6 @@
                 text-decoration: none;
             }
             a:hover{
-                color: white;
                 text-decoration: none;
             }
             
@@ -37,6 +36,13 @@
             }
             .left{
                 float: left;
+            }
+            .list{
+                list-style: none;
+            }
+            .list > li{
+                margin-top:5px;
+                font-size: 16px;
             }
             #main_nav{
                 padding: 20px;
@@ -78,11 +84,18 @@
                 height:100px;
                 padding: 20px;
                 color: gray;
-/*                opacity: 0.5;*/
             }
+            
+            #main_container{
+                padding: 100px 200px 100px 200px;
+            }
+            #sub_container{
+                padding: 0px 100px 0px 100px;
+            }
+            
             .fixed_img{
                 background-attachment: fixed;
-                background-image: url('./img/main.jpg');
+                background-image: url('./img/skill.jpg');
                 background-size: cover;
                 color:white;
             }
@@ -117,6 +130,9 @@
             .git:hover{
                 color: #5C1DB5;
             }
+            .contents{
+                margin-bottom: 100px;
+            }
         </style>
     </head>
     <body>
@@ -124,7 +140,7 @@
         <div class="fixed_img">
             <div id="main_nav">
                 <div class="left">
-                    <a href="./index.html" id="logo">About me</a>
+                    <a href="/index.html" id="logo">About me</a>
                 </div>
                 <div class="right">
                     <ul id="nav_list">
@@ -135,34 +151,54 @@
                     </ul>
                 </div>
             </div>
+            
             <div class="container">
-                <h1 style="font-size:3.5em">Na Yun Hwan</h1>
-                <h2 style="font-weight:100">Developer & Designer</h2>
-                <br>
-                <br>
-                
-
-                <div id="main_list">
-                    <li class="left">
-                        <a href="https://www.facebook.com/yoonhwan.na.1">
-                            <div class="circle facebook">
-                                <storng style="font-weight:800;font-size:38px;">f</storng>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="left">
-                        <a href="https://github.com/Exitsoftware">
-                            <div class="circle git">
-                                <i class="xi-github" style="padding-top:3px;"></i>
-                            </div>
-                        </a>
-                    </li>
-
-                </div>
+                <h1 style="font-size:80px; margin-bottom:100px;">Skill</h1>
                 
             </div>
         </div>
-            
+        </div>
+
+        <div id="main_container">
+            <h1 style="text-align:center;font-size:42px;">Introduce</h1>
+            <br>
+            <br>
+            <hr>
+            </br>
+            <div id="sub_container">
+                <div class="contents">
+                    <h2>Techniques</h2>
+                    </br>
+                    <p style="margin-left:50px; font-size:18px;">
+                        <i class="xi-html5"></i><i class="xi-css3"></i>
+                        <br>
+                        <br>
+                        C, Java, Python, Javascript, jQuery, Ruby, Node.js,MongoDB, Bootstrap
+                    </p>
+                    
+                </div>
+                <div class="contents">
+                    <h2>Dev list</h2>
+                    </br>
+                    </br>
+                    <ul class="list">
+                        <li>[2012] 천안고등학교 공식 어플리케이션 개발</li>
+                        <li>[2012] 맥도날드 맥 딜리버리 서비스 어플리케이션 개발 [다운로드 수 48만명]</li>
+                        <li>[2013] 블루투스 채팅 어플리케이션 '블루톡' 개발</li>
+                        <li>[2013] 안드로이드 게임 '폴리곤' 개발</li>
+                        <li>[2013] 천안고등학교 과학 교육 사이트 구축</li>
+                        <li>[2013] 성남서고등학교 공식 어플리케이션 개발</li>
+                        <li>[2013] 천안 불당초등학교 영어 교육 어플리케이션 개발</li>
+                        <li>[2013] 고등학교 물리1 교육 어플리케이션 개발</li>
+                        <li>[2013] 천안시 영화관 '야우리 시네마' 잔여 좌석 확인 어플리케이션 개발 [다운로드 수 1만명]</li>
+                        <li>[2014] 한국 외국어대학교 글로벌 경영대학 학생회 어플리케이션 개발</li>
+                        <li>[2014] 한양대학교(ERICA) 셔틀버스 알리미 '셔틀콕' 어플리케이션 개발 [핫 이슈 교통 어플 선정]</li>
+                        <li>[2014] 한양대학교(서울) 행사 알리미 '행사한대 궁금한양' 어플리케이션 개발</li>
+                        <li>[2015] The wood fashion Korea 쇼핑몰 홈페이지 디자인</li>
+                        <li>[2015] 한양대학교 인재모임 HACS 홈페이지 개발</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div id="footer" >
             <p>About me. Na Yun Hwan</p>
