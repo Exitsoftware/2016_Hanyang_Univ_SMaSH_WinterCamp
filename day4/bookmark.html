@@ -1,6 +1,8 @@
 <!Doctype html>
 <html>
+    
 <head>
+    <meta charset="utf-8">
     <!-- Min VS original -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>  
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
@@ -9,37 +11,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!--web fonts-->
     <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <!-- angular -->
-    <script>
-        var app = angular.module("Bookmark", ['firebase']);  
-        app.controller("Ctrl", function ($scope, $firebaseArray) {  
-            $scope.message = "Welcome User";  
-            $scope.url;
-            $scope.urlArr = [];
-            
-            var firebaseURL = "https://smashbook.firebaseio.com/";
-            
-            $scope.getList = function(){
-                var echoRef = new Firebase(firebaseURL);
-                var query = echoRef.orderByChild("url");
-                $scope.urlArr = $firebaseArray(query);
-            }
-            
-            var get_title = document.title;
-            
-            $scope.add = function() { 
-                $scope.urlArr.$add({url: $scope.url, title: "testUser"});   
-            }
-            
-            $scope.getList();
-        });  
-    </script>
+    
+    <!--xeicon-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
+
+    <script type="text/javascript" src="app.js"></script>
     
     <style>
         *{
             margin: 0 auto;
             font-family: 'PT Sans Narrow';
             color: #353535;
+        }
+        li{
+            list-style:none;
         }
         #logo{
             text-align: center;
@@ -48,11 +35,18 @@
             width: 100%;
             padding: 150px 0px 150px 0;
         }
+        
         #input_search{
             width: 55%;
             height: 30px;
             font-size: 24px;
             opacity: 0.8;
+            padding: 10px;
+            text-align: center;
+            font-family: roboto;
+        }
+        #input_search-placeholder{
+            text-align:center;
         }
         #contents{
             padding: 0 20% 0 20%;
@@ -61,33 +55,107 @@
             background: #E9E9E9;
         }
         .card {
-            width: 50%;
+            width: 60%;
             padding:1.5rem;
             box-shadow:0 1px 2px #aaa;
             background:white;
             margin: 20px auto;
             border-radius:3px;
+            text-align:left;
+        }
+        .card:hover{
+            transition: 0.3s;
+            background:#bbbbbb;
+        }
+        .right{
+            float:right;
+        }
+        .left{
+            float:left;
+        }
+        .btn_login{
+            color: white;
+            font-size:24px;
+            text-decoration:none;
+        }
+        .btn_login:hover{
+            transition:0.3s;
+            color: #666666;
+        }
+        #login{
+            margin:20px;
+        }
+        .close:hover{
+            color:red;
+        }
+        #footer{
+            padding: 20px 20% 20px 20%;
+            background:#444444;
+        }
+        #footer > p{
+            color: #888888;
+        }
+        #name_box > li{
+            float:left;
+            margin-right: 20px;
         }
     </style>
-  
+    <script>
+        $(document).ready(function(){
+           $('.card').fadeIn('fast');
+        });
+    </script>
 	<title>SMaSH Book Mark</title>
 </head>
 <body ng-app="Bookmark" ng-controller="Ctrl">
+    <div id="login" class="right">
+        <ul id="name_box">
+            <li ng-show="$authData" href="#"><img src="{{profileIMG}}" style="width:32px; height:32px; border-radius:100%"></li>
+            <li><a class="btn_login" ng-show="$authData" href="#">{{name}}</a></li>
+            <li><a class="btn_login" ng-hide="$authData" href="#" ng-click="FBLogin()">Login</a></li>
+            <li><a class="btn_login" ng-show="$authData" href="#" ng-click="FBLogout()">Logout</a></li>
+            
+        </ul>
+    </div>
     <div id="logo">
-        <h3>SMaSH</h3>
-        <h1>Bookmark</h1>
+        <h2 style="color:white; font-size:32px;">SMaSH</h3>
+        <h1 style="color:white;font-size: 42px;">Bookmark</h1>
         </br>
-        <input id="input_search" ng-model="url" type="text" placeholder="input your url">
+        <input id="input_search" ng-keydown="enter($event);" ng-model="url" type="text" placeholder="Enter your URL">
+<!--        <div id="btn" type="submit" ng-click="add();">ADD</div>-->
     </div>
     <div id="contents">
-        <div style="text-align:center; margin: 200px auto;">
-
+        <div style="text-align:center; margin: 100px auto;">
+            <div ng-hide="$authData">
+                <p>로그인이 필요한 서비스입니다.</p>
+            </div>
             <div ng-repeat="u in urlArr">
-                <li class="card"> {{u}} </li>
+                <div class="card" ng-click="goUrl(u);">
+                    <div style="clear:both">
+                        <a href="#"><i class="xi-close right" ng-click="remove(u);"></i></a>
+                    </div>
+                    <div class="left" style="margin-right:20px;">
+<!--                        <img src="http://placehold.it/50x50" style="width:50px; height:50px;">-->
+                        <img src="{{u.favicon}}" style="width:50px; height:50px;">
+
+                    </div>
+                    <h3>{{u.title}}</h3>
+                    <p>{{u.url}}</p>
+                    
+                </div>
             </div>
             
-            <input id="btn" type="submit" value="select" ng-click="add();">
+            
         </div>
+        
     </div>
+    <div id="footer">
+        <p>
+            Na Yun Hwan</br>
+            Hanyang University ERICA</br>
+            Computer Science & Engineering
+        </p>
+    </div>
+    
 </body>
 </html>

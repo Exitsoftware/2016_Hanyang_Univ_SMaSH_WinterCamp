@@ -29,13 +29,25 @@
                 var query = echoRef.child('users').child($scope.$authData.uid).orderByChild('url');
                 $scope.urlArr = $firebaseArray(query);
             };
+//
+            $scope.add = function() {
+                var temp_title = $scope.url.split('/').slice(2);
+                temp_title = temp_title[0].split('.');
+                var real_title;
+                if(temp_title[0] === 'www'){
+                    real_title = temp_title[1];
+                }else{
+                    real_title = temp_title[0];
+                }
 
-            $scope.add = function() { 
+                alert(real_title);
                 $scope.urlArr.$add({
                     url: $scope.url,
-                    title: "TBA"
+                    title: real_title,
+                    favicon: "http://grabicon.com/icon?domain=" + $scope.url + "&size=50"
                 });   
             };
+            
             
             //LISTEN FOR RETURN KEY
             $scope.enter = function(e){
@@ -43,8 +55,6 @@
                     $scope.add();
                 }    
             }
-             
-            
             
             $scope.remove = function(url) {
               $scope.urlArr.$remove(url);
@@ -61,6 +71,8 @@
                 $scope.$authData = authData;
               });
               console.log("Authenticated successfully with payload:", authData);
+              $scope.name = $scope.$authData['facebook']['displayName'];
+              $scope.profileIMG = $scope.$authData['facebook']['profileImageURL']
                 $scope.getList();
               // do something with the login info
             }
@@ -72,13 +84,17 @@
           var ref = new Firebase(firebaseURL);
           ref.unauth();
           delete $scope.$authData;
-            $route.reload();
+          location.reload();
         };
             
+        $scope.goUrl = function(u){
+            window.location.href = u.url;
+        }
+            
 
-       
+    });
+        
 
-    }); 
     </script>
     
     <style>
@@ -157,15 +173,27 @@
         #footer > p{
             color: #888888;
         }
-
+        #name_box > li{
+            float:left;
+            margin-right: 20px;
+        }
     </style>
-  
+    <script>
+        $(document).ready(function(){
+           $('.card').fadeIn('fast');
+        });
+    </script>
 	<title>SMaSH Book Mark</title>
 </head>
 <body ng-app="Bookmark" ng-controller="Ctrl">
     <div id="login" class="right">
-        <a class="btn_login"ng-hide="$authData" href="#" ng-click="FBLogin()">Login</a>
-        <a class="btn_login"ng-show="$authData" href="#" ng-click="FBLogout()">Logout</a>
+        <ul id="name_box">
+            <li ng-show="$authData" href="#"><img src="{{profileIMG}}" style="width:32px; height:32px; border-radius:100%"></li>
+            <li><a class="btn_login" ng-show="$authData" href="#">{{name}}</a></li>
+            <li><a class="btn_login" ng-hide="$authData" href="#" ng-click="FBLogin()">Login</a></li>
+            <li><a class="btn_login" ng-show="$authData" href="#" ng-click="FBLogout()">Logout</a></li>
+            
+        </ul>
     </div>
     <div id="logo">
         <h2 style="color:white; font-size:32px;">SMaSH</h3>
@@ -180,12 +208,14 @@
                 <p>로그인이 필요한 서비스입니다.</p>
             </div>
             <div ng-repeat="u in urlArr">
-                <div class="card" href="#">
+                <div class="card" ng-click="goUrl(u);">
                     <div style="clear:both">
                         <a href="#"><i class="xi-close right" ng-click="remove(u);"></i></a>
                     </div>
                     <div class="left" style="margin-right:20px;">
-                        <img src="http://placehold.it/50x50">
+<!--                        <img src="http://placehold.it/50x50" style="width:50px; height:50px;">-->
+                        <img src="{{u.favicon}}" style="width:50px; height:50px;">
+
                     </div>
                     <h3>{{u.title}}</h3>
                     <p>{{u.url}}</p>
