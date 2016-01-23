@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/nayunhwan/Documents/code/HY_camp/day5/BluetoothChat/Application/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3713f30726299231eddfb206043ebb72a2519b6f">
+        <dex dex="/Users/nayunhwan/Documents/code/HY_camp/day5/BluetoothChat/Application/build/intermediates/pre-dexed/debug/classes-ac3f9c898cab7c764d0bf1d0280d150b111c56ee.jar" />
+    </item>
+    <item
+        jar="/Users/nayunhwan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/Users/nayunhwan/Documents/code/HY_camp/day5/BluetoothChat/Application/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-aaf6f321b03e050e425642ba3267fab3e4a8dbb8.jar" />
+    </item>
+    <item
+        jar="/Users/nayunhwan/Documents/code/HY_camp/day5/BluetoothChat/Application/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/Users/nayunhwan/Documents/code/HY_camp/day5/BluetoothChat/Application/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-c688b374b1aff551a5b4685b1c114304af4cf269.jar" />
+    </item>
+    <item
+        jar="/Users/nayunhwan/Documents/code/HY_camp/day5/BluetoothChat/Application/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/Users/nayunhwan/Documents/code/HY_camp/day5/BluetoothChat/Application/build/intermediates/pre-dexed/debug/classes-2158cffd5ef30a631ee874347968476523354fbe.jar" />
+    </item>
+    <item
+        jar="/Users/nayunhwan/Documents/code/HY_camp/day5/BluetoothChat/Application/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
+        <dex dex="/Users/nayunhwan/Documents/code/HY_camp/day5/BluetoothChat/Application/build/intermediates/pre-dexed/debug/classes-87f72e3cf71fd1116b5893e7a5ffc71ed3039223.jar" />
+    </item>
+
+</items>
